@@ -15,24 +15,21 @@ struct ContentView: View {
                      .font(.largeTitle)
                      .foregroundColor(.blue)
                      .fontWeight(.bold)
-                     .padding(.bottom, 10)
-            
+                     .padding(.bottom, 10 )
+                Spacer()
             }
-            
             HStack{
-                ContenedorComida(T1Per: "Pizza" , ImgPer: "" , T2Per: "209")
-                ContenedorComida(T1Per: "Pizza" , ImgPer: "" , T2Per: "20")
+                ContenedorComida(T1Per: "Pizza" , ImgPer: "pizza" , T2Per: "209.00")
+                ContenedorComida(T1Per: "Spagetti" , ImgPer: "spget" , T2Per: "300.00")
             }
             Spacer()
             HStack{
-                Text("Bebidas")
-                    .font(.largeTitle)
-                    .foregroundColor(.blue)
-                    .fontWeight(.bold)
-                    .padding()
                 
-       
-                
+                ContenedorPromocional(T1Per: "Hamburgesa" , D1Per: "Promocion por el dia del niño Hamburgesa XXL a solo." , T2Per: "109.00")
+            }
+            HStack{
+                ContenedorComida(T1Per: "Tacos" , ImgPer: "tacos" , T2Per: "490.00")
+                ContenedorComida(T1Per: "Sushi" , ImgPer: "sushi" , T2Per: "590.00")
 
             }
           
@@ -42,37 +39,8 @@ struct ContentView: View {
     }
 }
 
-//A si se hace una estructura reutilizable
-struct ContenedorComida: View {
-    let T1Per: String
-    let ImgPer: String
-    let T2Per: String
-    var body: some View {
-        VStack{
-            Image(ImgPer)
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: 300)
-                .cornerRadius(20)
-                .scaledToFit()
-                .padding()
-            Text(T1Per)
-                .fontWeight(.medium)
-                .font(.title)
-                .foregroundColor(.indigo)
-                .padding()
-            
-            HStack{
-                Spacer()
-            Text("$ \(T2Per)")
-                    .bold()
-            }
-        }
-        .padding()
-        .background(Color.gray.opacity(0.2))
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-    }
-}
+
+
 #Preview {
     ContentView()
 }
